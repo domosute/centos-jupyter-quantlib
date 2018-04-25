@@ -33,6 +33,8 @@ cd /opt/QuantLib-SWIG && \
 ./autogen.sh && \
 ./configure && \
 make -C Python install && \
+cd /opt/QuantLib-SWIG/Python && \
+/opt/conda/bin/python3.6 setup.py install && \
 # Setup for Jupyter Notebook
 echo "export PATH=/opt/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
 groupadd -g 1000 jupyter && \
