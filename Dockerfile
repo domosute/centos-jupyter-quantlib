@@ -40,6 +40,7 @@ useradd -g jupyter -G wheel -m -s /bin/bash jupyter && \
 echo "jupyter:jupyter" | chpasswd && \
 echo "jupyter ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/jupyter && \
 chmod 0440 /etc/sudoers.d/jupyter && \
+# Below file enable password access instead of token
 echo "c.NotebookApp.token = 'jupyter'" > /home/jupyter/jupyter_notebook_config.py && \
 # Remove files to reduce image size
 rm -f /opt/Anaconda3-5.1.0-Linux-x86_64.sh && \
