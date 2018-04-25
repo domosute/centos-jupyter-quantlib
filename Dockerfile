@@ -32,11 +32,15 @@ make install && \
 cd /opt/QuantLib-SWIG && \
 ./autogen.sh && \
 ./configure && \
-make -C Python install && \
-cd /opt/QuantLib-SWIG/Python && \
+make -C Python install
+# 4-b). Configuring QuantLib-SWIG
+RUN cd /opt/QuantLib-SWIG/Python && \
+/opt/conda/bin/python3.6 setup.py build && \
 /opt/conda/bin/python3.6 setup.py install && \
+/opt/conda/bin/python3.6 setup.py wrap
+
 # Setup for Jupyter Notebook
-echo "export PATH=/opt/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
+RUN echo "export PATH=/opt/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
 groupadd -g 1000 jupyter && \
 useradd -g jupyter -G wheel -m -s /bin/bash jupyter && \
 echo "jupyter:jupyter" | chpasswd && \
