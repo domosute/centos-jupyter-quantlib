@@ -4,6 +4,7 @@ RUN yum update && \
 # Installing necessary yum package for compilation
 yum groupinstall -y core base "Development Tools" git boost-devel python-devel pcre-devel && \
 # Downloading source file (Anaconda3, Quantlib, SWIG, Quantlib-SWIG)
+cd /opt && \
 wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh && \
 git clone https://github.com/lballabio/QuantLib.git /opt/QuantLib/ && \
 git clone https://github.com/swig/swig.git /opt/SWIG/ && \
