@@ -10,7 +10,6 @@ git clone https://github.com/lballabio/QuantLib.git /opt/QuantLib/ && \
 git clone https://github.com/swig/swig.git /opt/SWIG/ && \
 git clone https://github.com/lballabio/QuantLib-SWIG.git /opt/QuantLib-SWIG/ && \
 # Begin Installation
-cd /opt && \
 # 1). Install Anaconda3
 chmod +x /opt/Anaconda3-5.1.0-Linux-x86_64.sh &&\
 /opt/Anaconda3-5.1.0-Linux-x86_64.sh -b -p /opt/conda && \
