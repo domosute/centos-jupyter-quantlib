@@ -1,0 +1,23 @@
+name : swig
+version: 4.0.0
+
+source:
+git_url: https://github.com/swig/swig.git
+
+requirement:
+  build:
+    - automake
+    - autoconf
+    - libtool
+    - pcre
+    - python
+  run:
+    - pcre
+test:
+  commands:
+    - swig --help
+
+about:
+  home: http://www.swig.org/
+  license: GPLv3
+  summary: C/C++ parser code generator
