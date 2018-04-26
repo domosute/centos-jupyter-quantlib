@@ -5,7 +5,6 @@ http://www.quantlib.org/install/linux.shtml
 
 Pre-requisite:
 --------------
-
  Make sure to have boost installed on build environment.
 
  - Debian: `apt-get install -y libboost-all-dev`
@@ -14,7 +13,7 @@ Pre-requisite:
 
 To build: 
 ---------
-within the folder, run `"conda-build ."`
+After quantlib installation, within the folder, run `"conda-build ."`
 
 To upload:
 ----------
