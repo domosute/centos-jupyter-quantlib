@@ -3,7 +3,7 @@ FROM centos
 RUN yum update && \
 # Installing necessary packages for compilation
 yum groupinstall -y core base "Development Tools" && \
-yum install -y git boost-devel python-devel pcre-devel perl-devel && \
+yum install -y git boost-devel pcre-devel perl-devel && \
 # Downloading source files (Anaconda3, Quantlib, SWIG, Quantlib-SWIG)
 cd /opt && \
 wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh && \
@@ -16,6 +16,9 @@ chmod +x /opt/Anaconda3-5.1.0-Linux-x86_64.sh &&\
 /opt/Anaconda3-5.1.0-Linux-x86_64.sh -b -p /opt/conda && \
 /opt/conda/bin/conda update -y --prefix /opt/conda conda && \
 /opt/conda/bin/conda install -y jupyter numpy pandas && \
+# Setting up ENV value for Quantlib build
+export PATH=/opt/conda/bin:$PATH && \
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH && \
 # 2). Install QuantLib
 cd /opt/QuantLib && \
 ./autogen.sh && \
