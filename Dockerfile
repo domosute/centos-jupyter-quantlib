@@ -39,6 +39,7 @@ RUN cd /opt/QuantLib-SWIG/Python && \
 
 # Setup for Jupyter Notebook
 RUN echo "export PATH=/opt/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
+echo "export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH && \
 groupadd -g 1000 jupyter && \
 useradd -g jupyter -G wheel -m -s /bin/bash jupyter && \
 echo "jupyter:jupyter" | chpasswd && \
@@ -48,6 +49,7 @@ chmod 0440 /etc/sudoers.d/jupyter && \
 echo "c.NotebookApp.token = 'jupyter'" > /home/jupyter/jupyter_notebook_config.py && \
 # Remove files to reduce image size
 rm -f /opt/Anaconda3-5.1.0-Linux-x86_64.sh && \
+
 
 EXPOSE 8888
 USER jupyter
