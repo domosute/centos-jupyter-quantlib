@@ -9,7 +9,7 @@ requirement:
     - automake
     - autoconf
     - libtool
-    - pcre
+    - libpcre3-dev
     - python
   run:
     - pcre
