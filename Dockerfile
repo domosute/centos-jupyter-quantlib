@@ -37,7 +37,6 @@ make -C Python
 RUN cd /opt/QuantLib-SWIG/Python && \
 /opt/conda/bin/python3.6 setup.py wrap && \
 /opt/conda/bin/python3.6 setup.py build && \
-/opt/conda/bin/python3.6 setup.py test && \
 /opt/conda/bin/python3.6 setup.py install
 
 # Setup for Jupyter Notebook
