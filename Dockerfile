@@ -31,7 +31,7 @@ echo "c.NotebookApp.token = 'jupyter'" > /home/jupyter/jupyter_notebook_config.p
 # Remove files to reduce image size
 rm -f /opt/Anaconda3-5.1.0-Linux-x86_64.sh && \
 # Conda clean up
-/opt/conda/bin/conda clean all
+/opt/conda/bin/conda clean -y --all
 
 EXPOSE 8888
 USER jupyter
