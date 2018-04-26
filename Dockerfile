@@ -32,7 +32,7 @@ make install && \
 cd /opt/QuantLib-SWIG && \
 ./autogen.sh && \
 ./configure && \
-make -C Python install
+make -C Python
 # 4-b). Configuring QuantLib-SWIG
 RUN cd /opt/QuantLib-SWIG/Python && \
 /opt/conda/bin/python3.6 setup.py wrap
