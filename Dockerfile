@@ -35,7 +35,10 @@ cd /opt/QuantLib-SWIG && \
 make -C Python
 # 4-b). Configuring QuantLib-SWIG
 RUN cd /opt/QuantLib-SWIG/Python && \
-/opt/conda/bin/python3.6 setup.py wrap
+/opt/conda/bin/python3.6 setup.py wrap && \
+/opt/conda/bin/python3.6 setup.py build && \
+/opt/conda/bin/python3.6 setup.py test && \
+/opt/conda/bin/python3.6 setup.py install
 
 # Setup for Jupyter Notebook
 RUN echo "export PATH=/opt/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
