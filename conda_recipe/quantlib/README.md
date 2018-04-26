@@ -13,7 +13,7 @@ Pre-requisite:
 
 To build: 
 ---------
-After quantlib installation, within the folder, run `"conda-build ."`
+Within the folder, run `"conda-build ."`
 
 To upload:
 ----------
