@@ -10,7 +10,7 @@ Pre-requisite:
 
  - Debian: `apt-get install -y libboost-all-dev`
 
- - CentOS: 'yum install -y boost-devel`
+ - CentOS: `yum install -y boost-devel`
 
 To build: 
 ---------
