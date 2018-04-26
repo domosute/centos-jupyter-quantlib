@@ -1,0 +1,18 @@
+package:
+  name: quantlib
+  version: 1.12.1
+
+source:
+  git_url: https://github.com/lballabio/QuantLib.git
+
+requirements:
+  build:
+    - gcc
+
+  run:
+    - libgcc
+
+about:
+  home: http://www.quantlib.org/
+  license: https://github.com/lballabio/QuantLib/blob/master/LICENSE.TXT
+  summary: "QuantLib: the free/open-source library for quantlitative finance"
