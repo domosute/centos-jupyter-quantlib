@@ -7,8 +7,7 @@ source:
 
 requirements:
   build:
-    - m4
-    - gcc
+
   run:
     - libgcc
     
