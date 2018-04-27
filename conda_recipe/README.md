@@ -13,7 +13,7 @@ Pre-requisite:
 
 To build: 
 ---------
-Within the folder, run `"conda-build ."`
+Within the folder, set $PREFIX as conda installed directory, then run `"conda-build ."`
 
 To upload:
 ----------
