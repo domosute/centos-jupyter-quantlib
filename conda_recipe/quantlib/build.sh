@@ -1,5 +1,5 @@
 #!/bin/bash
 ./autogen.sh
-./configure --prefix=$PREFIX
+./configure
 make
 make install
