@@ -1,5 +1,5 @@
 #!/bin/bash
 ./autogen.sh
-./configure --prefix=/opt/conda
+./configure --prefix=$PREFIX
 make
 make install
