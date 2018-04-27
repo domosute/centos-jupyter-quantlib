@@ -9,8 +9,7 @@ requirements:
   build:
 
   run:
-    - libgcc
-    
+
 about:
   home: http://www.quantlib.org/
   license: https://github.com/lballabio/QuantLib/blob/master/LICENSE.TXT
