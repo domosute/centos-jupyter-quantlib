@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ./autogen.sh
-./configure --prefix=$PREFIX
+./configure
 make -C Python
 make check
 make install
