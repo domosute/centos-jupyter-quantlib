@@ -1,5 +1,5 @@
 #!/bin/bash
 ./autogen.sh
 ./configure
-make
+make -j 4
 make install
