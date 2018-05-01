@@ -15,7 +15,8 @@ chmod +x /opt/Anaconda3-5.1.0-Linux-x86_64.sh &&\
 # Install Jupyter related Packages
 /opt/conda/bin/conda install -y jupyter numpy pandas
 # Install QuantLib related Packages
-RUN /opt/conda/bin/conda install -y -c domouste quantlib && \
+RUN /opt/conda/bin/conda install -y -c domosute boost && \
+/opt/conda/bin/conda install -y -c domouste quantlib && \
 /opt/conda/bin/conda install -y -c domosute quantlib-python
 
 # Setup for Jupyter Notebook
