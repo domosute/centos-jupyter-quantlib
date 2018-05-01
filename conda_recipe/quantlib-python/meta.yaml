@@ -3,6 +3,9 @@ package:
   version: 1.12.1
   
 source:
+  git_url: https://github.com/lballabio/QuantLib-SWIG.git
+  
+requirements:
   build:
     - swig
     - python
