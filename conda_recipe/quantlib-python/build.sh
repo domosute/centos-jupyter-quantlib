@@ -1,10 +1,13 @@
 #!/bin/bash
 
-PREFIX= # Set prefix here
-INCLUDE_PATH=$PREFIX/include
-LIBRARY_PATH=$PREFIX/lib
+export PREFIX=/opt/conda # Adjust accordingly
+
+export CFLAGS="${CFLAGS} -I${PREFIX}/include"
+export CXXFLAGS="${CFLAGS}"
+export CPPFLAGS="-I${PREFIX}/include"
+export LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
 
 ./autogen.sh
-./configure --prefix=$PREFIX --boost-include-dir=$INCLUDE_PATH --boost-lib-dir=$LIBRARY_PATH
+./configure --prefix=$PREFIX
 make -j 4 -C Python
 sudo make -C Python install
