@@ -4,8 +4,8 @@ cd source
 chmod +x configure install-sh
 
 if [ "$(uname)" == "Linux" ]; then
-    export CC=gcc44
-    export CXX=g++44
+    export CC=gcc
+    export CXX=g++
 
     ./configure --prefix="$PREFIX"
 fi
