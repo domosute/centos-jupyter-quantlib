@@ -1,5 +1,7 @@
 FROM centos
 
+USER root
+
 RUN yum update && \
 # Installing necessary packages for compilation
 yum groupinstall -y core base "Development Tools" && \
@@ -16,9 +18,9 @@ chmod +x /opt/Anaconda3-5.1.0-Linux-x86_64.sh &&\
 /opt/conda/bin/conda install -y jupyter numpy pandas r
 
 # Install QuantLib related Packages
-RUN /opt/conda/bin/conda install -y -c domosute boost && \
-/opt/conda/bin/conda install -y -c domouste quantlib && \
-/opt/conda/bin/conda install -y -c domosute quantlib-python
+RUN /opt/conda/bin/conda install -y -c domosute boost
+RUN /opt/conda/bin/conda install -y -c domouste quantlib
+RUN /opt/conda/bin/conda install -y -c domosute quantlib-python
 
 # Setup for Jupyter Notebook
 RUN echo "export PATH=/opt/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
