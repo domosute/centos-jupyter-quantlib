@@ -3,14 +3,6 @@ Reference:
 
 http://www.quantlib.org/install/linux.shtml
 
-Pre-requisite:
---------------
- Make sure to have boost installed on build environment.
-
- - Debian: 
-
- - CentOS: `yum install perl-ExtUtils-MakeMaker -y`
-
 To build: 
 ---------
 Within the folder, set $PREFIX as conda installed directory, then run `"conda-build ."`
