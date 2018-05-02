@@ -9,15 +9,15 @@ source:
 requirements:
   build:
     - python
-    - icu 54.*          [linux, x86_64]
-    - bzip2             [linux, x86_64]
+    - icu 54.*        # [x86_64]
+    - bzip2           # [x86_64]
     - zlib
 
   run:
     # python dependency is here due to libboost-python library that depends on
     # python version
     - python
-    - icu 54.*          [linux, x86_64]
+    - icu 54.*        # [x86_64]
     - zlib
 
 about:
