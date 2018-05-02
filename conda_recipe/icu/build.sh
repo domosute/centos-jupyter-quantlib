@@ -1,18 +1,26 @@
-package:
-  name: icu
-  version: 56.1
+#!/bin/bash
 
-source:
-  fn:  icu4c-56_1-Win64-msvc10.zip                                                    [win64]
-  url: http://download.icu-project.org/files/icu4c/56.1/icu4c-56_1-Win64-msvc10.zip   [win64]
-  md5: 480c72491576c048de1218c3c5519399                                               [win64]
-  fn:  icu4c-56_1-Win32-msvc10.zip                                                    [win32]
-  url: http://download.icu-project.org/files/icu4c/56.1/icu4c-56_1-Win32-msvc10.zip   [win32]
-  md5: 45167a240b60e36b59a87eda23490ce4                                               [win32]
-  fn:  icu4c-56_1-src.tgz                                                             [unix]
-  url: http://download.icu-project.org/files/icu4c/56.1/icu4c-56_1-src.tgz            [unix]
-  md5: c4a2d71ff56aec5ebfab2a3f059be99d                                               [unix]
+cd source
+chmod +x configure install-sh
 
-about:
-  home: http://site.icu-project.org/
-  license: MIT
+if [ "$(uname)" == "Linux" ]; then
+    export CC=gcc44
+    export CXX=g++44
+
+    ./configure --prefix="$PREFIX"
+fi
+
+if [ "$(uname)" == "Darwin" ]; then
+    export LANG=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
+    export LDFLAGS="-Wl,-headerpad_max_install_names"
+
+    ./configure --prefix="$PREFIX" \
+        --disable-samples \
+        --disable-tests \
+        --enable-static \
+        --with-library-bits=64
+fi
+
+make
+make install
