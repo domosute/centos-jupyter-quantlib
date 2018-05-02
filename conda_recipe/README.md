@@ -1,7 +1,7 @@
 Reference:
 ----------
 
-http://www.quantlib.org/install/linux.shtml
+https://github.com/conda/conda-recipes
 
 To build: 
 ---------
