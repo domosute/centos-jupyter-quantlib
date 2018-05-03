@@ -15,15 +15,13 @@ chmod +x /opt/Anaconda3-5.1.0-Linux-x86_64.sh &&\
 /opt/Anaconda3-5.1.0-Linux-x86_64.sh -b -p /opt/conda && \
 /opt/conda/bin/conda update -y --prefix /opt/conda conda && \
 # Install Jupyter related Packages
-/opt/conda/bin/conda install -y jupyter numpy pandas r
+/opt/conda/bin/conda install -y jupyter numpy pandas r && \
 
 # Install QuantLib related Packages
-RUN /opt/conda/bin/conda install -y -c domosute boost
-RUN /opt/conda/bin/conda install -y -c domouste quantlib
-RUN /opt/conda/bin/conda install -y -c domosute quantlib-python
+/opt/conda/bin/conda install -y -c domosute quantlib quantlib-python && \
 
 # Setup for Jupyter Notebook
-RUN echo "export PATH=/opt/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
+echo "export PATH=/opt/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
 cp /etc/profile.d/conda.sh /root/.bashrc && \
 groupadd -g 1000 jupyter && \
 useradd -g jupyter -G wheel -m -s /bin/bash jupyter && \
