@@ -7,7 +7,7 @@ How to Run the image
 ------------
 Under docker-enabled environment, execute the following;
 ```
-docker run -d -it -p 8888:8888 -v ${PWD}:/home/jupyter --name ql domosute/centos-quantlib
+docker run -d -it -p 8888:8888 -v ${PWD}:/home/jupyter --name centos-quantlib domosute/centos-quantlib
 ```
 where "$PWD" is outside working directory in case if persistent storage is preferred.
 
