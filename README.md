@@ -5,10 +5,20 @@ Used [centos](https://hub.docker.com/_/centos/) as base image, and [Anaconda3 5.
 
 How to Run the Image
 ------------
-Under docker-enabled environment, execute the following;
+1. Clone this repository.
 ```
-docker run -d -it -p 8888:8888 -v ${PWD}:/home/jupyter --name centos-quantlib domosute/centos-quantlib
+git clone https://github.com/domosute/centos-quantlib.git
 ```
-where "$PWD" is outside working directory in case if persistent storage is preferred.
-
-Storing `jupyter_notebook_config.py` under working directory would enable password access instead of token. (default is set as 'jupyter')
+2. Change directory to notebook folder
+```
+cd ./notebook
+```
+3. Under docker-enabled environment, execute the following;
+```
+docker run -d -it -p 9999:9999 -v ${PWD}:/home/jupyter --name centos-quantlib domosute/centos-quantlib
+```
+4. Access via browser. Type 'jupyter' to access to notebook.
+```
+https://<IP address of docker mahcine>:9999
+```
+* Default password is 'jupyter'.  Modify `jupyter_notebook_config.py` accordingly.
