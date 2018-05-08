@@ -11,7 +11,7 @@ git clone https://github.com/domosute/centos-quantlib.git
 ```
 2. Change directory to notebook folder
 ```
-cd ./notebook
+cd ./centos-quantlib/notebook
 ```
 3. Under docker-enabled environment, execute the following;
 ```
