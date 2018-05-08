@@ -16,10 +16,8 @@ chmod +x /opt/Anaconda3-5.1.0-Linux-x86_64.sh &&\
 /opt/conda/bin/conda update -y --prefix /opt/conda conda && \
 # Install Jupyter related Packages
 /opt/conda/bin/conda install -y jupyter numpy pandas r && \
-
 # Install QuantLib related Packages
 /opt/conda/bin/conda install -y -c domosute quantlib quantlib-python && \
-
 # Setup for Jupyter Notebook
 echo "export PATH=/opt/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
 cp /etc/profile.d/conda.sh /root/.bashrc && \
@@ -35,7 +33,7 @@ rm -f /opt/Anaconda3-5.1.0-Linux-x86_64.sh && \
 # Conda clean up
 /opt/conda/bin/conda clean -y --all
 
-EXPOSE 8888
+EXPOSE 9999
 USER jupyter
 WORKDIR /home/jupyter
 
