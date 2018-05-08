@@ -35,8 +35,8 @@ rm -f /opt/Anaconda3-5.1.0-Linux-x86_64.sh && \
 # Conda clean up
 /opt/conda/bin/conda clean -y --all
 
-EXPOSE 8888
+EXPOSE 9999
 USER jupyter
 WORKDIR /home/jupyter
 
-CMD ["/bin/bash", "-c", "/opt/conda/bin/jupyter-notebook --ip=*"]
+CMD ["/bin/bash", "-c", "/opt/conda/bin/jupyter notebook --ip=*"]
