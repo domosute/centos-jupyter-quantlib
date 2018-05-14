@@ -7,7 +7,7 @@ RUN yum update && \
 yum groupinstall -y core base "Development Tools" && \
 yum install -y git boost-devel pcre-devel perl-devel && \
 # Downloading Anaconda3 source
-cd /opt && \
+RUN cd /opt && \
 wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh && \
 # Begin Installation
 # Install Anaconda3
