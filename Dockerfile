@@ -2,12 +2,12 @@ FROM centos
 
 USER root
 
-RUN yum update && \
+RUN yum update -y && \
 # Installing necessary packages for compilation
 yum groupinstall -y core base "Development Tools" && \
 yum install -y git boost-devel pcre-devel perl-devel && \
 # Downloading Anaconda3 source
-RUN cd /opt && \
+cd /opt && \
 wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh && \
 # Begin Installation
 # Install Anaconda3
@@ -15,11 +15,11 @@ chmod +x /opt/Anaconda3-5.1.0-Linux-x86_64.sh &&\
 /opt/Anaconda3-5.1.0-Linux-x86_64.sh -b -p /opt/conda && \
 /opt/conda/bin/conda update -y --prefix /opt/conda conda && \
 # Install Jupyter related Packages
-/opt/conda/bin/conda install -y jupyter numpy pandas r
+/opt/conda/bin/conda install -y jupyter numpy pandas r && \
 # Install QuantLib related Packages
-RUN /opt/conda/bin/conda install -y -c domosute quantlib quantlib-python
+/opt/conda/bin/conda install -y -c domosute quantlib quantlib-python && \
 # Setup for Jupyter Notebook
-RUN echo "export PATH=/opt/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
+echo "export PATH=/opt/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
 cp /etc/profile.d/conda.sh /root/.bashrc && \
 groupadd -g 1000 jupyter && \
 useradd -g jupyter -G wheel -m -s /bin/bash jupyter && \
