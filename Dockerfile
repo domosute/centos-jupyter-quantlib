@@ -3,8 +3,8 @@ FROM centos
 USER root
 
 RUN yum update -y && \
-# Installing necessary packages for compilation
-yum groupinstall -y core base "Development Tools" && \
+# Installing necessary packages for compilation (Uncomment while in build process)
+# yum groupinstall -y core base "Development Tools" && \
 # yum install -y git boost-devel pcre-devel perl-devel && \
 # Downloading Anaconda3 source
 cd /opt && \
