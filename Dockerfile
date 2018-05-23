@@ -15,7 +15,9 @@ chmod +x /opt/Anaconda3-5.1.0-Linux-x86_64.sh &&\
 /opt/Anaconda3-5.1.0-Linux-x86_64.sh -b -p /opt/conda && \
 /opt/conda/bin/conda update -y --prefix /opt/conda conda && \
 # Install Jupyter related Packages
-/opt/conda/bin/conda install -y jupyter numpy pandas r && \
+/opt/conda/bin/conda install -y jupyter numpy pandas r ipyparallel && \
+# Enable IPython cluster
+ipcluster nbextension enable && \
 # Install QuantLib related Packages
 /opt/conda/bin/conda install -y -c domosute boost quantlib quantlib-python && \
 # Setup for Jupyter Notebook
