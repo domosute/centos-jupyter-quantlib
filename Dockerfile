@@ -2,7 +2,7 @@ FROM centos
 
 USER root
 
-RUN yum update -y
+RUN yum update -y && \
 # Installing necessary packages for compilation (Uncomment while in build process)
 yum groupinstall -y core base "Development Tools" && \
 # yum install -y git boost-devel pcre-devel perl-devel && \
