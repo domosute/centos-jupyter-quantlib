@@ -29,7 +29,7 @@ chmod 0440 /etc/sudoers.d/jupyter && \
 # Below file enable password access instead of token
 echo "c.NotebookApp.token = 'jupyter'" > /home/jupyter/jupyter_notebook_config.py && \
 # Enable IPython cluster
-ipcluster nbextension enable && \
+/opt/conda/bin/ipcluster nbextension enable && \
 # Remove files to reduce image size
 rm -f /opt/Anaconda3-5.1.0-Linux-x86_64.sh && \
 # Conda clean up
