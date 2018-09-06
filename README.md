@@ -22,3 +22,7 @@ docker run -d -it -p 9999:9999 -v ${PWD}:/home/jupyter --name centos-quantlib do
 https://<IP address of docker mahcine>:9999
 ```
 * Default password is 'jupyter'.  Modify `jupyter_notebook_config.py` accordingly.
+5. (Option) Crontab-ui is used to run ipython notebook in periodical manner. 
+```
+http://<IP address of docker machine>:8000
+```
