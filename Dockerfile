@@ -6,13 +6,19 @@ RUN yum update -y && \
 # Installing necessary packages for compilation (Uncomment while in build process)
 yum groupinstall -y core base "Development Tools" && \
 # yum install -y git boost-devel pcre-devel perl-devel && \
+# Installing Crontab-ui
+yum install -y epel-release && \
+yum install -y nodejs && \
+npm install -g crontab-ui \
+yum clean all && \
+rm -fr /var/cache/yum && \
 # Downloading Anaconda3 source
 cd /opt && \
-wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh && \
+wget https://repo.continuum.io/archive/Anaconda3-5.2.0-Linux-x86_64.sh && \
 # Begin Installation
 # Install Anaconda3
-chmod +x /opt/Anaconda3-5.1.0-Linux-x86_64.sh && \
-/opt/Anaconda3-5.1.0-Linux-x86_64.sh -b -p /opt/conda && \
+chmod +x /opt/Anaconda3-5.2.0-Linux-x86_64.sh && \
+/opt/Anaconda3-5.2.0-Linux-x86_64.sh -b -p /opt/conda && \
 /opt/conda/bin/conda update -y --prefix /opt/conda conda && \
 # Install Jupyter related Packages
 /opt/conda/bin/conda install -y jupyter numpy pandas r ipyparallel && \
@@ -33,12 +39,12 @@ echo "c.NotebookApp.token = 'jupyter'" > /home/jupyter/jupyter_notebook_config.p
 # Enable IPython cluster
 /opt/conda/bin/ipcluster nbextension enable && \
 # Remove files to reduce image size
-rm -f /opt/Anaconda3-5.1.0-Linux-x86_64.sh && \
+rm -f /opt/Anaconda3-5.2.0-Linux-x86_64.sh && \
 # Conda clean up
 /opt/conda/bin/conda clean -y --all
 
-EXPOSE 9999
+EXPOSE 9999 8000
 USER jupyter
 WORKDIR /home/jupyter
 
-CMD ["/bin/bash", "-c", "/opt/conda/bin/jupyter notebook --ip=*"]
+CMD ["/bin/bash", "-c", "/opt/conda/bin/jupyter notebook --ip=*", "HOST=0.0.0.0 PORT=8000 /usr/bin/crontab-ui]
