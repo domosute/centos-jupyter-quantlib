@@ -42,9 +42,6 @@ echo "c.NotebookApp.token = 'jupyter'" > /home/jupyter/jupyter_notebook_config.p
 rm -f /opt/Anaconda3-5.2.0-Linux-x86_64.sh && \
 # Conda clean up
 /opt/conda/bin/conda clean -y --all
-# Enable Crontab-UI at start
-COPY crontabui.service /etc/systemd/system/
-RUN systemctl enable crontabui.service
 
 EXPOSE 9999 9000
 USER jupyter
