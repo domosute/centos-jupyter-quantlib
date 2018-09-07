@@ -42,9 +42,24 @@ echo "c.NotebookApp.token = 'jupyter'" > /home/jupyter/jupyter_notebook_config.p
 rm -f /opt/Anaconda3-5.2.0-Linux-x86_64.sh && \
 # Conda clean up
 /opt/conda/bin/conda clean -y --all
+# Enable Crontab-UI at start
+cat << EOF > /etc/systemd/system/crontabui.service
+[Unit]
+Description=crontab-ui
+[Service]
+Type=simple
+Environment=HOST=0.0.0.0
+Environment=PORT=9000
+ExecStart=/usr/bin/crontab-ui
+Restart=always
+RestartSec=10
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl enable crontabui.service
 
 EXPOSE 9999 8000
 USER jupyter
 WORKDIR /home/jupyter
 
-CMD ["/bin/bash", "-c", "/opt/conda/bin/jupyter notebook --ip=*", "HOST=0.0.0.0 PORT=8000 /usr/bin/crontab-ui]
+CMD ["/bin/bash", "-c", "/opt/conda/bin/jupyter notebook --ip=*"]
