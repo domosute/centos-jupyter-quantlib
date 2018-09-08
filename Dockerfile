@@ -43,4 +43,4 @@ EXPOSE 9999 9000
 USER jupyter
 WORKDIR /home/jupyter
 
-CMD ["/bin/bash", "-c", "/opt/conda/bin/jupyter notebook --ip=*"]
+CMD ["/bin/bash", "-c", "/opt/conda/bin/jupyter lab --ip=*"]
