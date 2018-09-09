@@ -20,6 +20,8 @@ chmod +x /opt/Anaconda3-5.2.0-Linux-x86_64.sh && \
 /opt/conda/bin/conda install -y jupyter numpy pandas r ipyparallel && \
 # Install PostgreSQL driver
 /opt/conda/bin/conda install -y psycopg2 && \
+# Install schedule package for crontab like Python script execution
+/opt/conda/bin/conda install -c domosute schedule && \
 # Install QuantLib related Packages
 /opt/conda/bin/conda install -y -c domosute boost quantlib quantlib-python && \
 # Setup for Jupyter Notebook
