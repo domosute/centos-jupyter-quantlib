@@ -18,8 +18,6 @@ chmod +x /opt/Anaconda3-5.2.0-Linux-x86_64.sh && \
 /opt/conda/bin/conda update -y --prefix /opt/conda conda && \
 # Install Jupyter related Packages
 /opt/conda/bin/conda install -y jupyter numpy pandas r ipyparallel && \
-# Install Jupyterhub
-/opt/conda/bin/conda install -c conda-forge jupyterhub && \
 # Install PostgreSQL driver
 /opt/conda/bin/conda install -y psycopg2 && \
 # Install QuantLib related Packages
