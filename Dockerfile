@@ -21,9 +21,9 @@ chmod +x /opt/Anaconda3-5.2.0-Linux-x86_64.sh && \
 # Install PostgreSQL driver
 /opt/conda/bin/conda install -y psycopg2 && \
 # Install nodejs
-/opt/conda/bin/conda install nodejs && \
+# /opt/conda/bin/conda install nodejs && \
 # Install crontab-ui
-/opt/conda/bin/npm install -g crontab-ui && \
+# /opt/conda/bin/npm install -g crontab-ui && \
 # Install QuantLib related Packages
 /opt/conda/bin/conda install -y -c domosute boost quantlib quantlib-python && \
 # Setup for Jupyter Notebook
