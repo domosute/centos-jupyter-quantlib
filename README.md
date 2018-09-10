@@ -9,7 +9,7 @@ How to Run the Image
 ```
 git clone https://github.com/domosute/centos-quantlib.git
 ```
-2. Change directory to notebook folder
+2. Change directory
 ```
 cd ./centos-quantlib/notebook
 ```
