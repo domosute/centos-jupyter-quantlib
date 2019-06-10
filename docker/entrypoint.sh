@@ -3,7 +3,7 @@
 # generate a new self signed SSL certificate when none is provided in the volume
 if [ ! -f /etc/nginx/ssl/jupyter.key  ] || [ ! -f /etc/nginx/ssl/jupyter.crt ]
 then
-    openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc//ssl//certs/jupyter.key -out /etc/ssl//certs/jupyter.crt -subj "/C=US/ST=Chicago/L=Chicago/O=Self Signed/OU=IT Department/CN=Domain.com"
+    openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc//ssl//certs/jupyter.key -out /etc/ssl//certs/jupyter.crt -subj "/C=US/ST=Chicago/L=Chicago/O=Self Signed/OU=IT Department/CN=gladius.corp"
 fi
 
 # Start Postfix at boot
