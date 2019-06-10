@@ -46,7 +46,7 @@ rm -f /opt/Anaconda3-5.2.0-Linux-x86_64.sh && \
 # Add shell script to start multi service
 COPY ./docker/entrypoint.sh /usr/local/bin
 
-EXPOSE 9999 9000
+EXPOSE 9999 9999
 USER jupyter
 WORKDIR /home/jupyter
 
