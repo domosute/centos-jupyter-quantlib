@@ -11,11 +11,11 @@ git clone https://github.com/domosute/centos-quantlib.git
 ```
 2. Enter into the folder and build the container.
 ```
-docker build -t centos-quantlib .
+docker build -t ql .
 ```
 3. Under docker-enabled environment, execute the following;
 ```
-docker run -d -it -p 9999:9999 -v $PWD/notebook:/home/jupyter --name centos-quantlib centos-quantlib
+docker run -d -it -p 9999:9999 -v $PWD/notebook:/home/jupyter --name ql ql
 ```
 4. Access via browser. Type 'jupyter' to access to notebook.
 ```
